@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Sensor</title>
+    <meta charset="UTF-8">
+
+    <!-- Library Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Home</a> |
+    <a href="teknologi.html">Teknologi</a> |
+    <a href="data-sensor.html">Data Sensor</a> |
+    <a href="kontak.html">Kontak</a>
+</nav>
+
+<hr>
+
+<h2>Data Monitoring</h2>
+
+<p>Berikut data sensor Smart Home:</p>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Waktu</th>
+            <th>Suhu</th>
+            <th>Kelembaban</th>
+            <th>Tegangan</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr><td>08:00</td><td>25°C</td><td>60%</td><td>220V</td></tr>
+        <tr><td>09:00</td><td>26°C</td><td>58%</td><td>220V</td></tr>
+        <tr><td>10:00</td><td>27°C</td><td>55%</td><td>220V</td></tr>
+        <tr><td>11:00</td><td>28°C</td><td>50%</td><td>220V</td></tr>
+        <tr><td>12:00</td><td>29°C</td><td>48%</td><td>220V</td></tr>
+    </tbody>
+</table>
+
+<h3>Grafik Sensor</h3>
+
+<canvas id="myChart" width="400" height="200"></canvas>
+
+<script>
+const ctx = document.getElementById('myChart');
+
+new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['08:00', '09:00', '10:00', '11:00', '12:00'],
+        datasets: [
+            {
+                label: 'Suhu (°C)',
+                data: [25, 26, 27, 28, 29],
+                borderWidth: 2
+            },
+            {
+                label: 'Kelembaban (%)',
+                data: [60, 58, 55, 50, 48],
+                borderWidth: 2
+            }
+        ]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'top',
+            }
+        }
+    }
+});
+</script>
+
+<h3>Analisa Data</h3>
+<p>
+Suhu meningkat dari 25°C ke 29°C seiring waktu, sedangkan kelembaban menurun dari 60% ke 48%. 
+Hal ini menunjukkan hubungan berbanding terbalik antara suhu dan kelembaban.
+</p>
+
+<p>
+Tegangan tetap stabil di 220V, menandakan sistem listrik bekerja dengan baik tanpa fluktuasi.
+</p>
+
+</body>
+</html>
